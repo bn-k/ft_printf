@@ -18,9 +18,12 @@ L_LIB = libft
 L_FLAG = -lft
 SRC =\
      ft_printf.c \
+     test_1.c \
      main.c \
+     split.c \
+     types.c \
 
-# other worker
+# other 
 L_OTHER = other
 L_JNEDERLO = -ljnederlo
 
@@ -45,6 +48,10 @@ OBJS_DIRS = $(sort $(dir $(OBJS)))
 
 all: $(TEST)
 
+1: all
+	./$(TEST) 1
+2: all
+	./$(TEST) 2
 	
 $(TEST): build $(OBJS)
 	$(CC) -o $(TEST) $(FLAGS) $(F_INC) -L$(L_OTHER) -L$(L_LIB) $(L_FLAG) $(L_JNEDERLO) $(OBJS)

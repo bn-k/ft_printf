@@ -1,0 +1,19 @@
+
+#include "ft_printf.h"
+
+void	test_1(void)
+{
+	int 	number = 1000;
+	char *pointer = ft_strdup("WORD");
+	printf("Here is a number-%6d-and a-%10s-word.\n", 10, pointer);
+	printf("Here is a number-%6d-and a-%10s-word.\n", 444, pointer);
+	printf("Here is a number-%6d-and a-%10s-word.\n", 1, pointer);
+	ft_memdel((void **)&pointer);
+}
+
+void	test_2(void)
+{
+	char *str = ft_strdup("autre");
+	ft_printf("Voici un %s test pour %s", str,"finir");
+
+}

@@ -9,7 +9,10 @@ int	ft_printf(const char *format, ...)
 	va_start(ap, format);
 	while (*format)
 	{
-		count += write(1, format, 1);
+		if (*format == '%')
+			split(ap, &format);
+		else
+			count += write(1, format, 1);
 		format++;
 	}
 	va_end(ap);
