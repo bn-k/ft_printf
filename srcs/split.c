@@ -18,7 +18,6 @@ int	split(va_list ap, const char **format)
 	{
 		if (*format[0] == func_tab[i].type)
 		{
-
 			s = func_tab[i].t_function_type(ap, *format);
 		}
 		i++;

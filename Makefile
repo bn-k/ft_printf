@@ -23,10 +23,6 @@ SRC =\
      split.c \
      types.c \
 
-# other 
-L_OTHER = other
-L_JNEDERLO = -ljnederlo
-
 # special chars
 
 LOG_CLEAR		= \033[2K
@@ -52,9 +48,11 @@ all: $(TEST)
 	./$(TEST) 1
 2: all
 	./$(TEST) 2
+3: all
+	./$(TEST) 3
 	
 $(TEST): build $(OBJS)
-	$(CC) -o $(TEST) $(FLAGS) $(F_INC) -L$(L_OTHER) -L$(L_LIB) $(L_FLAG) $(L_JNEDERLO) $(OBJS)
+	$(CC) -o $(TEST) $(FLAGS) $(F_INC) -L$(L_LIB) $(L_FLAG) $(OBJS)
 	echo "$(LOG_CLEAR)Create obj $(LOG_CYAN)$(LOG_NOCOLOR)$(LOG_UP)"
 	echo "$(LOG_BLACK)$(LOG_GREEN)Compiled $(LOG_GREEN)✓$(LOG_NOCOLOR)"
 	echo "$(LOG_RED)Testing ... $(LOG_RED)$(LOG_NOCOLOR)"
