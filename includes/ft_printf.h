@@ -13,7 +13,7 @@ typedef struct s_function_type
 
 typedef struct s_format
 {
-	int		d;
+	int	d;
 	char	s;
 } t_format;
 
@@ -27,7 +27,7 @@ int	ft_printf(const char *format, ...);
 
 // dispatch
 
-int	split(va_list ap, const char **format);
+int	formating(va_list ap, const char **format);
 char *s_type(va_list ap, const char *format);
 char *d_type(va_list ap, const char *format);
 

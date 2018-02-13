@@ -1,5 +1,4 @@
 #include "ft_printf.h"
-#include "utf8.h"
 #include <stdio.h>
 
 void	test(wchar_t *wc)

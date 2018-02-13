@@ -5,14 +5,14 @@ const t_function_type func_tab[] = {
 	{'d', d_type}
 };
 
-int	split(va_list ap, const char **format)
+int	formating(va_list ap, const char **format)
 {
 	int i;
-	int	len;
+	int	count;
 	char *s;
 
 	i = 0;
-	len = 0;
+	count = 0;
 	(*format)++;
 	while (i < 2)
 	{
@@ -22,7 +22,7 @@ int	split(va_list ap, const char **format)
 		}
 		i++;
 	}
-	len = write(1, s, ft_strlen(s));
+	count = write(1, s, ft_strlen(s));
 
-	return (len);
+	return (count);
 }

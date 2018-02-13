@@ -10,7 +10,7 @@ int	ft_printf(const char *format, ...)
 	while (*format)
 	{
 		if (*format == '%')
-			split(ap, &format);
+			count += formating(ap, &format);
 		else
 			count += write(1, format, 1);
 		format++;
