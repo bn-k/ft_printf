@@ -42,7 +42,11 @@ OBJS = $(addprefix $(D_OBJ)/, $(addsuffix .o, $(basename $(SRC))))
 F_INC = $(addsuffix $(D_INC), $(basename -I))
 OBJS_DIRS = $(sort $(dir $(OBJS)))
 
-all: $(TEST)
+
+all: libft $(TEST)
+
+libft: 
+	make -C libft re
 
 1: all
 	./$(TEST) 1
