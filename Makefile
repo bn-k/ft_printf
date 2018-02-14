@@ -15,13 +15,9 @@ D_LIB = libft
 
 # sources
 L_LIB = libft
-L_FLAG = -lft
+L_FLAG = -lftprintf
 SRC =\
-     ft_printf.c \
-     test_1.c \
      main.c \
-     split.c \
-     types.c \
 
 # special chars
 

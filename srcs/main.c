@@ -9,7 +9,7 @@ void	test(wchar_t *wc)
 int	main(int ac, char **av)
 {
 	if (ac == 1)
-		test(L"ભ");
+		test_1();
 	if (av[1])
 	{
 		if (av[1][0] == '1')

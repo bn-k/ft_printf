@@ -4,18 +4,22 @@
 # include <stdarg.h>
 
 // typedef
+typedef struct s_mark
+{
+	char	minus;
+	char	plus;
+	char	zero;
+	char 	hash;
+	int		width;
+	int		precis;
+} t_mark;
 
 typedef struct s_function_type
 {
 	char 	type;
-	char *(*t_function_type)(va_list, const char*);
+	size_t	(*t_function_type)(va_list, const char*, t_mark);
 } t_function_type;
 
-typedef struct s_format
-{
-	int	d;
-	char	s;
-} t_format;
 
 //test
 void	test_1(void);
@@ -23,12 +27,22 @@ void	test_2(void);
 void	test_3(char *s, char *s2);
 
 // main
-int	ft_printf(const char *format, ...);
+int		ft_printf(const char *format, ...);
+
+// parsing
+void	format_parsing(const char **format, t_mark *mk);
+t_mark		init(void);
 
 // dispatch
 
-int	formating(va_list ap, const char **format);
-char *s_type(va_list ap, const char *format);
-char *d_type(va_list ap, const char *format);
+size_t	new_format(va_list ap, const char **format);
+size_t 	s_spec(va_list ap, const char *format, t_mark mk);
+size_t 	d_spec(va_list ap, const char *format, t_mark mk);
 
+// display
+size_t	s_display(char *s, t_mark mk);
+
+//display tools
+size_t		put_padding(int len);
+size_t		put_precision(char *s, int len);
 #endif
