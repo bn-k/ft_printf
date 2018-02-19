@@ -1,4 +1,3 @@
-#include "../libft/includes/ft_printf.h"
 #include <stdio.h>
 #include <locale.h>
 

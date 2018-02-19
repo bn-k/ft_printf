@@ -42,7 +42,7 @@ OBJS_DIRS = $(sort $(dir $(OBJS)))
 all: libft $(TEST)
 
 libft: 
-	make -C libft re
+	make -C ~/libft re
 
 1: all
 	./$(TEST) 1
