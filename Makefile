@@ -5,7 +5,7 @@
 # comp
 TEST = test
 CC = clang
-CCFLAGS = -Werror -Wextra -Wall #-fsanitize=adress -g
+CCFLAGS =  #-fsanitize=adress -g
 
 # dir
 D_SRC = srcs
