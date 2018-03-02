@@ -9,15 +9,16 @@ CCFLAGS =  #-fsanitize=adress -g
 
 # dir
 D_SRC = srcs
-D_INC = includes
+D_INC = ../libftprintf/includes
 D_OBJ = objs
-D_LIB = libft
+D_LIB = ../libftprintf
 
 # sources
-L_LIB = libft
+L_LIB = ../libftprintf
 L_FLAG = -lftprintf
 SRC =\
      main.c \
+     test_1.c \
 
 # special chars
 
@@ -42,7 +43,7 @@ OBJS_DIRS = $(sort $(dir $(OBJS)))
 all: libft $(TEST)
 
 libft: 
-	make -C ~/libft re
+	make -C ../libftprintf
 
 1: all
 	./$(TEST) 1
