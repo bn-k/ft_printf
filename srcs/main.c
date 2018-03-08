@@ -3,7 +3,7 @@
 int	main(int ac, char **av)
 {
 //		setlocale(LC_ALL, "en_US.UTF-8");
-	//	setlocale(LC_ALL, "");
+		setlocale(LC_ALL, "");
 	if (ac == 1)
 		test();
 	else if (av[1])
