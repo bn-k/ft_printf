@@ -10,6 +10,7 @@ CCFLAGS =  #-fsanitize=adress -g
 # dir
 D_SRC = srcs
 D_INC = ../libftprintf/includes
+D_INC = includes/
 D_OBJ = objs
 D_LIB = ../libftprintf
 
@@ -19,6 +20,7 @@ L_FLAG = -lftprintf
 SRC =\
      main.c \
      test_1.c \
+     assert_printf.c \
 
 # special chars
 
@@ -53,7 +55,7 @@ libft:
 	./$(TEST) 3
 	
 $(TEST): build $(OBJS)
-	$(CC) -o $(TEST) $(FLAGS) $(F_INC) -L$(L_LIB) $(L_FLAG) $(OBJS)
+	$(CC) -o $(TEST) $(FLAGS) $(I_INC) $(F_INC) -L$(L_LIB) $(L_FLAG) $(OBJS)
 	echo "$(LOG_CLEAR)Create obj $(LOG_CYAN)$(LOG_NOCOLOR)$(LOG_UP)"
 	echo "$(LOG_BLACK)$(LOG_GREEN)Compiled $(LOG_GREEN)✓$(LOG_NOCOLOR)"
 	echo "$(LOG_RED)Testing ... $(LOG_RED)$(LOG_NOCOLOR)"
